@@ -12,7 +12,7 @@ export default function useCurrentUser() {
   const {storyData} = useSelector(state=>state.story)
 const navigate = useNavigate();
   useEffect(() => {
-    axios.get("http://localhost:8000/api/user/current", { withCredentials: true })
+    axios.get(`${import.meta.VITE_SERVER_URL}/api/user/current`, { withCredentials: true })
       .then(res => {
         // Prevent storing HTML payloads
         if (typeof res.data === "string" && res.data.includes("<!DOCTYPE html>")) {
