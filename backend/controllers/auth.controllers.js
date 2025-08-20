@@ -35,8 +35,8 @@ try {
     res.cookie("token",token,{
         httpOnly:true,
         maxAge:10*365*24*60*60*1000,
-        secure:false,
-        sameSite:"Strict"
+        secure:true,
+        sameSite:"None"
     })
     return res.status(201).json({user})
     
@@ -68,8 +68,8 @@ try {
     res.cookie("token",token,{
         httpOnly:true,
         maxAge:10*365*24*60*60*1000,
-        secure:false,
-        sameSite:"Strict"
+        secure:true,
+        sameSite:"None"
     })
     return res.status(200).json({user})
     
